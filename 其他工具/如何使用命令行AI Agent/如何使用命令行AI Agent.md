@@ -159,6 +159,12 @@ claude --version
 
 #### 国内中转站
 
+##### Anyrouter
+
+> [!WARNING]
+>
+> 这个免费网站非常慢，并且很有可能是骗子，搞一些赠送福利后大批量封号的把戏，请转到本节末尾另外一个站点，但是命令行工具的Tokens消耗是比较大的，非要白嫖也不是不行。
+
 为了解决Anthropic对于中国包括港澳地区的IP动辄封号的行为，我们只能使用国内的中转站。我们暂且使用Any Router。目前（2025.7.11），这是一个公益网站，不能够充值，白给100美元，仅能够通过邀请码（一次50美元）与签到（一次10美元）获得余额，如果跑路了，就替换为其他中转站。
 
 进入链接https://anyrouter.top/register?aff=fjIS，然后注册账号。在左侧API令牌处，添加一个令牌，然后限制令牌额度为无限，模型可以只勾选claude-sonnet-4，opus非常非常贵。
@@ -189,6 +195,14 @@ claude
 ```
 
 <img src="./assets/image-20250711232257231.png" alt="image-20250711232257231" style="zoom:50%;" />
+
+##### API易
+
+www.apiyi.com 
+```bash
+export ANTHROPIC_API_KEY="sk-***"
+export ANTHROPIC_BASE_URL="https://vip.apiyi.com"
+```
 
 使用国内中转站，不需要使用魔法。使用国内中转站存在一定的数据风险，需要谨慎授予权限和使用环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。后续如果可以通过普通的API中转网站驱动会再更新（TODO）。
 
