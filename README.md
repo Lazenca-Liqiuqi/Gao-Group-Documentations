@@ -8,10 +8,6 @@
 
 ## 其它工具
 
-### AI工具
-
 **如何使用命令行AI Agent：** 如何在命令行科学上网、如何安装并使用Gemini CLI和Claude Code并在Vscode中使用。
-
-### 数据处理工具
 
 **Panoply：** 
