@@ -1,4 +1,4 @@
-# 如何使用Gemini CLI和Claude Code
+# 如何使用命令行AI Agent
 
 Lazenca
 
@@ -101,6 +101,10 @@ Set-ExecutionPolicy RemoteSigned
 
 ## Claude Code
 
+> [!NOTE]
+>
+> 2025.7.15，Anthropic发布了Windows原生的Claude Code，可以直接跳过4.1 安装WSL，直接在命令行中安装Claude Code了。
+
 ### 安装WSL
 
 在控制面板-程序和功能-启用或关闭Windows功能中，开启Virtual Machine Platform（Windows虚拟机监控程序平台）与Windows Subsystem for Linux Support（适用于Linux的Windows子系统）。Win11再开启Windows Hypervisor Platform（可能没有）和Hyper-V。
@@ -164,6 +168,10 @@ claude --version
 ![image-20250711231920598](./assets/image-20250711231920598.png)
 
 复制API，然后配置环境变量，修改Claude Code的API地址为中转站，将每一行的“sk-…”替换为API令牌。
+
+> [!NOTE]
+>
+> 对于Windows原生Claude Code，在C:\Users\User_name\\.claude中直接修改setting.json文件即可。
 
 ```bash
 echo -e '\n export ANTHROPIC_AUTH_TOKEN=sk-...' >> ~/.bash_profile
