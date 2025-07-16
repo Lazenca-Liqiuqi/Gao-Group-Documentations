@@ -1,8 +1,8 @@
 # LLM价格一览
 
-包含：OpenAI（GPT系列）、Google（Gemini系列）、Anthropic（Claude系列）、X（Grok系列）、幻方量化（Deepseek系列），国外模型价格均为美元。国产平台大多是可以免费使用的，由于Deepseek的服务器很垃圾，大部分人都会选择使用API。
+包含：OpenAI（GPT系列）、Google（Gemini系列）、Anthropic（Claude系列）、X（Grok系列）、幻方量化（Deepseek系列），国外模型价格均为美元。国产平台的网页版大多是可以免费使用的，由于Deepseek的服务器很垃圾，大部分人都会选择使用API。
 
-包含最新网页版与会员所提供的模型，不包含只提供API不提供网页版会员的模型，价格均为每百万Tokens价格（M Toks）。
+包含最新网页版与会员所提供的模型，不包含只提供API不提供网页版会员的模型，价格均为每百万Tokens价格（M Toks），缓存价格是单独提供cache价格栏目，部分平台在输入时判断是否缓存命中，在提示价格中计入。
 
 可以和中间商API平台校对价格，中间商平台一般不提供缓存价格，多轮聊天全计算输入价格，这也是他们盈利的主要方式之一。
 
@@ -77,3 +77,16 @@ Deepseek的价格在优惠时间段打折，Chat模型打5折，Reasoner打25折
 信源：https://api-docs.deepseek.com/zh-cn/quick_start/pricing#%E6%89%A3%E8%B4%B9%E8%A7%84%E5%88%99
 
 时间：25.7.14
+
+## 月之暗面
+
+月之暗面提供Kimi模型，强调Agent能力，同时，也提供单独的缓存命中输入价格。价格单位是人民币。
+
+| 模型                 | 提示 | 输出 | 缓存 | 备注                 |
+| -------------------- | ---- | ---- | ---- | -------------------- |
+| kimi-k2-0711-preview | 1/4  | 16   | /    | 131,072 tokens上下文 |
+| kimi-latest-128k     | 1/10 | 30   | /    | 131,072 tokens上下文 |
+
+信源：https://platform.moonshot.cn/docs/pricing/chat#%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BB%B7
+
+时间：25.7.16
