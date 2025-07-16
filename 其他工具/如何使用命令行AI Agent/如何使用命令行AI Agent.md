@@ -6,7 +6,7 @@ Lazenca
 
 Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI agent工具，agent与Chatbot的不同之处在于，agent在Terminal（bash、cmd、Powershell）中运行，我们可以授权agent一定的系统权限，直接修改文件、代码甚至可以自动进行调试与debug。其他相关工具也有Cursor，但Cursor是一个单独的IDE，而前两者不需要更换IDE，而与Vscode的其他AI插件（比如Cline、Github Copilot）相比，这类插件主要提供类似于Chatbot的功能并且有代码补全、生成测试的功能，而命令行agent可以直接扫描目录，而非当前打开的代码文件，提供更项目化的上下文，并且可以利用系统权限直接操作文件，可以进行文件管理、撰写README等工作。
 
-目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，但付费高昂，200美金的订阅才能爽用，用量不大的话可以使用API计费，Anthropic认为一个职业的程序员开发团队一个月人均的使用成本约为60-70美元。
+目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，但付费高昂，200美金的订阅才能爽用，用量不大的话可以使用API计费，Anthropic认为一个职业的程序员开发团队一个月人均的使用成本约为60-70美元（此乃谎言！）。
 
 我接下来提供Win下的使用方法，实测有效。
 
@@ -103,7 +103,7 @@ Set-ExecutionPolicy RemoteSigned
 
 > [!NOTE]
 >
-> 2025.7.15，Anthropic发布了Windows原生的Claude Code，可以直接跳过4.1 安装WSL，直接在命令行中安装Claude Code了。
+> 2025.7.15，Anthropic发布了Windows原生的Claude Code，可以直接跳过4.1 安装WSL，直接在命令行中安装Claude Code了。请自行搜索Windows安装node.js并且运行npm install -g @anthropic-ai/claude-code
 
 ### 安装WSL
 
@@ -157,21 +157,17 @@ claude --version
 
 <img src="./assets/image-20250711230949432.png" alt="image-20250711230949432" style="zoom: 50%;" />
 
-#### 国内中转站
+#### 国内中转站与其他模型
+
+为了解决Anthropic对于中国包括港澳地区的IP动辄封号的行为，我们只能使用中转站（API聚合平台或镜像），使用了国内的中转站，不需要使用魔法，网络环境相对稳定一些。
 
 ##### Anyrouter
 
 > [!WARNING]
 >
-> 这个免费网站非常慢，并且很有可能是骗子，搞一些赠送福利后大批量封号的把戏，但是命令行工具的Tokens消耗是比较大的，非要白嫖也不是不行。
+> 这个免费网站非常慢，并且很有可能是骗子，搞一些赠送福利后大批量封号的把戏，但是命令行工具的Tokens消耗是非常大的，非要白嫖也不是不行。
 
-为了解决Anthropic对于中国包括港澳地区的IP动辄封号的行为，我们只能使用国内的中转站。我们暂且使用Any Router。目前（2025.7.11），这是一个公益网站，不能够充值，白给100美元，仅能够通过邀请码（一次50美元）与签到（一次10美元）获得余额，如果跑路了，就替换为其他中转站。
-
-进入链接https://anyrouter.top/register?aff=fjIS，然后注册账号。在左侧API令牌处，添加一个令牌，然后限制令牌额度为无限，模型可以只勾选claude-sonnet-4，opus非常非常贵。
-
-<img src="./assets/image-20250711232031114.png" alt="image-20250711232031114" style="zoom:50%;" />
-
-![image-20250711231920598](./assets/image-20250711231920598.png)
+https://anyrouter.top/register?aff=fjIS
 
 复制API，然后配置环境变量，修改Claude Code的API地址为中转站，将每一行的“sk-…”替换为API令牌。
 
@@ -200,15 +196,21 @@ claude
 
 www.apiyi.com ，存在一定逆向与模型降级行为。
 ```bash
-export ANTHROPIC_API_KEY="sk-***"
-export ANTHROPIC_BASE_URL="https://vip.apiyi.com"
+export ANTHROPIC_API_KEY="sk-"
+export ANTHROPIC_BASE_URL="https://api.apiyi.com"
 ```
-
-使用国内中转站，不需要使用魔法。
 
 > [!WARNING]
 >
-> 使用国内中转站存在数据风险，需要谨慎授予权限和使用环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。
+> 使用国内中转站存在数据风险，需要谨慎授予权限和使用环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。、
+
+##### Kimi K2
+
+月之暗面推出的Kimi K2模型强调编程与Agent能力的模型，并且推出了Anthropic格式的api，以支持Claude Code的使用，详情参见https://platform.moonshot.cn/docs/guide/agent-support#%E8%8E%B7%E5%8F%96-api-key
+
+> [!TIP]
+>
+> 月之暗面针对账户充值金额有速率限制，请查询相关文档与网络使用心得。
 
 ##### Openrouter
 
@@ -216,11 +218,13 @@ export ANTHROPIC_BASE_URL="https://vip.apiyi.com"
 
 ### 在Vscode中使用Claude Code（TODO）
 
-当然，Vscode也是可以在Terminal直接启动WSL的，此时直接输入claude就可以启动。
+当然，Vscode也是可以在Terminal直接启动WSL的，此时直接输入claude就可以启动。（2025.7.15）安装Windows版之后，直接在Powershell即可启动。
 
 <img src="./assets/image-20250711234751091.png" alt="image-20250711234751091" style="zoom: 67%;" />
 
-Anthropic也在Vscode提供了Claude Code插件，但目前官方文档语焉不详，网上也没有相关教程，尚不清楚如何使用。
+Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速进入，并且会自动将所在的文件与选中的代码作为上下文输入。
+
+![image-20250716192309529](./assets/image-20250716192309529.png)
 
 
 
