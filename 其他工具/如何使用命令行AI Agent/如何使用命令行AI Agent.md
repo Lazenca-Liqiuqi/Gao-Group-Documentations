@@ -198,13 +198,17 @@ claude
 
 ##### API易
 
-www.apiyi.com 
+www.apiyi.com ，存在一定逆向与模型降级行为。
 ```bash
 export ANTHROPIC_API_KEY="sk-***"
 export ANTHROPIC_BASE_URL="https://vip.apiyi.com"
 ```
 
-使用国内中转站，不需要使用魔法。使用国内中转站存在一定的数据风险，需要谨慎授予权限和使用环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。后续如果可以通过普通的API中转网站驱动会再更新（TODO）。
+使用国内中转站，不需要使用魔法。使用国内中转站存在数据风险，需要谨慎授予权限和使用环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。
+
+##### Openrouter
+
+现在还没有开通Claude Code支持。
 
 ### 在Vscode中使用Claude Code（TODO）
 
