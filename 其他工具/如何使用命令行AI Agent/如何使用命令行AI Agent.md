@@ -36,8 +36,6 @@ Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI agent工具，
 curl -vvk google.com
 ```
 
-
-
 ## Gemini CLI
 
 ### 安装并运行
