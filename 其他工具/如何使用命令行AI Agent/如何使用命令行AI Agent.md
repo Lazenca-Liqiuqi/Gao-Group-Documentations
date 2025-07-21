@@ -8,7 +8,7 @@ Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI agent工具，
 
 目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，但付费高昂，200美金的订阅才能爽用，用量不大的话可以使用API计费，Anthropic认为一个职业的程序员开发团队一个月人均的使用成本约为60-70美元（此乃谎言！）。
 
-2025.7.17：介绍了Github Copilot的使用。
+2025.7.17：Github Copilot；2025.7.21：Trae。
 
 我接下来提供Win下的使用方法，实测有效。
 
@@ -232,7 +232,9 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 
 Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。
 
+## Trae
 
+字节跳动推出的Trae是一款类似于Cursor的集成IDE，并且也开发了类似于CLI Agent的SOLO模式，也有其在开发命令行项目的消息传出，建议使用国际版
 
 
 
