@@ -8,7 +8,9 @@ Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI agent工具，
 
 目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，但付费高昂，200美金的订阅才能爽用，用量不大的话可以使用API计费，Anthropic认为一个职业的程序员开发团队一个月人均的使用成本约为60-70美元（此乃谎言！）。
 
-2025.7.17：Github Copilot；2025.7.21：Trae。
+2025.7.15：Windows原生Claude Code，原有WSL安装方法可以作用于Linux。
+2025.7.17：Github Copilot
+2025.7.21：Trae。
 
 我接下来提供Win下的使用方法，实测有效。
 
@@ -136,12 +138,19 @@ wsl -d Ubuntu
 
 #### 官方版本
 
-在WSL里安装node.js。
+在WSL里安装node.js，
 
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
 sudo apt-get install -y nodejs
 node --version
+```
+
+Linux也是相同操作，也就是可以在服务器上安装，服务器已经预装了node.js，但版本太低，更新一下。
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+nvm install --lts
 ```
 
 然后可以安装Claude Code。
