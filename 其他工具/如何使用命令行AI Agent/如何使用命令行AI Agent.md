@@ -99,6 +99,8 @@ Set-ExecutionPolicy RemoteSigned
 
 <img src="./assets/image-20250711231455232.png" alt="image-20250711231455232" style="zoom:80%;" />
 
+Gemini CLI会将当前目录的GEMINI.md作为提示词。
+
 ## Claude Code
 
 > [!NOTE]
@@ -204,11 +206,18 @@ export ANTHROPIC_BASE_URL="https://api.wentuo.ai"
 >
 > 使用国内中转站可能存在数据风险，需要谨慎授予权限和配置环境，并且，不建议使用中转站专门提供的Claude Code安装包，风险性更高。
 >
-> 即便是为了省钱，也建议细致地写好.claudeignore文件和CLAUDE.md作为默认提示词，不然他乱扫一通之后就会吞掉巨量的cache tokens。
+> 即便是为了省钱，也建议细致地写好.claudeignore文件和CLAUDE.md作为默认提示词，不然他乱扫一通之后就会吞掉巨量的cache tokens。可以使用时先初始化或者命令Agent扫描工作目录，构造提示词文档。
 
 ##### Kimi K2
 
 月之暗面推出的Kimi K2模型强调编程与Agent能力的模型，并且推出了Anthropic格式的api，以支持Claude Code的使用，详情参见https://platform.moonshot.cn/docs/guide/agent-support#%E8%8E%B7%E5%8F%96-api-key
+
+```json
+"ANTHROPIC_BASE_URL": "https://api.moonshot.cn/anthropic",
+"ANTHROPIC_API_KEY": "sk-"
+```
+
+
 
 > [!TIP]
 >
@@ -218,7 +227,7 @@ export ANTHROPIC_BASE_URL="https://api.wentuo.ai"
 
 现在还没有开通Claude Code支持。
 
-### 在Vscode中使用Claude Code（TODO）
+### 在Vscode中使用Claude Code
 
 当然，Vscode也是可以在Terminal直接启动WSL的，此时直接输入claude就可以启动。（2025.7.15）安装Windows版之后，直接在Powershell即可启动。
 
@@ -228,13 +237,15 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 
 ![image-20250716192309529](./assets/image-20250716192309529.png)
 
-## Github Copilot
+并且，右键菜单也会出现Fix with Claude Code的选项。
 
-Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。
+## Github Copilot（等提供Agent的IDE/Editor）
+
+Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
 
 ## Trae
 
-字节跳动推出的Trae是一款类似于Cursor的集成IDE，并且也开发了类似于CLI Agent的SOLO模式，也有其在开发命令行项目的消息传出，建议使用国际版
+字节跳动推出的Trae是一款类似于Cursor的集成IDE，并且也开发了类似于CLI Agent的SOLO模式，也有其在开发命令行项目的消息传出，建议使用国际版。
 
 
 
