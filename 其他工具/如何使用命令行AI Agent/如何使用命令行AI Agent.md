@@ -257,6 +257,8 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 
 Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
 
+其他的IDE包括：Cursor，Trae IDE，腾讯CodeBuddy IDE等。
+
 ## Qwen Code&Qwen Coder
 
 2025.7.23，阿里云百炼发布了Qwen 3 Coder模型与Qwen Code CLI工具，其称性能与Claude 4 Sonnet媲美，可以通过

@@ -1,6 +1,6 @@
 # LLM价格一览
 
-包含：OpenAI（GPT系列）、Google（Gemini系列）、Anthropic（Claude系列）、X（Grok系列）、幻方量化（Deepseek系列），国外模型价格均为美元。国产平台的网页版大多是可以免费使用的，由于Deepseek的服务器很垃圾，大部分人都会选择使用API。
+包含：OpenAI（GPT系列）、Google（Gemini系列）、Anthropic（Claude系列）、X（Grok系列）、幻方量化（Deepseek系列）、月之暗面（Kimi系列），阿里巴巴云百炼（Qwen系列），国外模型价格均为美元。国产平台的网页版大多是可以免费使用的，也可以选择使用API接入其他需求。
 
 包含最新网页版与会员所提供的模型，不包含只提供API不提供网页版会员的模型，价格均为每百万Tokens价格（M Toks），缓存价格是单独提供cache价格栏目，部分平台在输入时判断是否缓存命中，在提示价格中计入。
 
