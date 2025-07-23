@@ -90,3 +90,22 @@ Deepseek的价格在优惠时间段打折，Chat模型打5折，Reasoner打25折
 信源：https://platform.moonshot.cn/docs/pricing/chat#%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BB%B7
 
 时间：25.7.16
+
+## 阿里巴巴
+
+阿里云百炼提供Qwen系列模型，最新的Qwen 3与Qwen 3 Coder提供方便的Agent接入方案。价格单位是人民币，并且，Qwen 3 Coder采用阶梯付费。
+
+| 模型             | 提示 | 输出 | 缓存 | 备注                |
+| ---------------- | ---- | ---- | ---- | ------------------- |
+| qwen3-coder-plus | 4    | 16   | /    | 输入Token数0-32K    |
+|                  | 6    | 24   | /    | 输入Token数32-128K  |
+|                  | 10   | 40   | /    | 输入Token数128-256K |
+|                  | 20   | 200  | /    | 输入Token数256K-!M  |
+
+| 模型            | 提示 | 输出 | 缓存 | 备注        |
+| --------------- | ---- | ---- | ---- | ----------- |
+| qwen3-235b-a22b | 2    | 8/20 | /    | 非思考/思考 |
+
+信源：https://help.aliyun.com/zh/model-studio/models?spm=a2ty02.30268951.d_model-market.2.fc2974a169pqLu&scm=20140722.S_help%40%40%E6%96%87%E6%A1%A3%40%402840914._.ID_help%40%40%E6%96%87%E6%A1%A3%40%402840914-RL_%E6%9C%80%E6%96%B0%E7%9A%84Qwen3%7EDAS%7ECoder%7EDAS%7EPlus%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B-LOC_doc%7EUND%7Eab-OR_ser-PAR1_2102029b17532168390224875d21ce-V_4-RE_new10-P0_18-P1_0#5d7f137a6467d
+
+时间：25.7.23

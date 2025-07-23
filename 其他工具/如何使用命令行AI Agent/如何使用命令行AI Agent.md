@@ -4,13 +4,14 @@ Lazenca
 
 ## 概况
 
-Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI agent工具，agent与Chatbot的不同之处在于，agent在Terminal（bash、cmd、Powershell）中运行，我们可以授权agent一定的系统权限，直接修改文件、代码甚至可以自动进行调试与debug。其他相关工具也有Cursor，但Cursor是一个单独的IDE，而前两者不需要更换IDE，而与Vscode的其他AI插件（比如Cline、Github Copilot）相比，这类插件主要提供类似于Chatbot的功能并且有代码补全、生成测试的功能，而命令行agent可以直接扫描目录，而非当前打开的代码文件，提供更项目化的上下文，并且可以利用系统权限直接操作文件，可以进行文件管理、撰写README等工作。
+Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI Agent工具，Agent与Chatbot的不同之处在于，Agent在Terminal（bash、cmd、Powershell）中运行，我们可以授权Agent一定的系统权限，直接修改文件、代码甚至可以自动进行调试与debug。其他相关工具也有Cursor，但Cursor是一个单独的IDE，而前两者不需要更换IDE，而与Vscode的其他AI插件（比如Cline、Github Copilot）相比，这类插件主要提供类似于Chatbot的功能并且有代码补全、生成测试的功能，而命令行Agent可以直接扫描目录，而非当前打开的代码文件，提供更项目化的上下文，并且可以利用系统权限直接操作文件，可以进行文件管理、撰写README等工作。
 
-目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，但付费高昂，200美金的订阅才能爽用，用量不大的话可以使用API计费，Anthropic认为一个职业的程序员开发团队一个月人均的使用成本约为60-70美元（此乃谎言！）。
+目前为止（2025.7.11），Gemini CLI是免费的，默认使用Gemini 2.5 Pro模型，Tokens用量接近于无限（很难想象每天1000次调用能用得完），只需要使用Google登陆即可，而Claude Code据称比Gemini CLI、Cursor都要强很多，并且有许多模型服务商都提供了Claude Code的接口，价格可以参阅《LLM价格一览》。两个工具的主要技术路线差异在于，Gemini CLI使用长上下文单Agent路线，而Claude Code使用主Agent领导多个子Agent分配任务。
 
 2025.7.15：Windows原生Claude Code，原有WSL安装方法可以作用于Linux。
 2025.7.17：Github Copilot
 2025.7.21：Trae。
+2025.7.23：Qwen3-Coder与Qwen Code发布。
 
 我接下来提供Win下的使用方法，实测有效。
 
@@ -153,6 +154,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 nvm install --lts
 ```
 
+切换到国内镜像（淘宝镜像，其他镜像源自行搜索）
+
+```bash 
+npm config set registry https://registry.npmmirror.com
+```
+
 然后可以安装Claude Code。
 
 ```bash
@@ -219,14 +226,12 @@ export ANTHROPIC_BASE_URL="https://api.wentuo.ai"
 
 ##### Kimi K2
 
-月之暗面推出的Kimi K2模型强调编程与Agent能力的模型，并且推出了Anthropic格式的api，以支持Claude Code的使用，详情参见https://platform.moonshot.cn/docs/guide/agent-support#%E8%8E%B7%E5%8F%96-api-key
+月之暗面推出的Kimi K2模型强调编程与Agent能力的模型，并且推出了Anthropic格式的api，以支持Claude Code的使用，详情参见https://platform.moonshot.cn/docs/guide/Agent-support#%E8%8E%B7%E5%8F%96-api-key
 
 ```json
 "ANTHROPIC_BASE_URL": "https://api.moonshot.cn/anthropic",
 "ANTHROPIC_API_KEY": "sk-"
 ```
-
-
 
 > [!TIP]
 >
@@ -251,6 +256,27 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 ## Github Copilot（等提供Agent的IDE/Editor）
 
 Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
+
+## Qwen Code&Qwen Coder
+
+2025.7.23，阿里云百炼发布了Qwen 3 Coder模型与Qwen Code CLI工具，其称性能与Claude 4 Sonnet媲美，可以通过
+
+``` bash
+npm i -g @qwen-code/qwen-code
+export OPENAI_API_KEY="your_api_key_here"
+export OPENAI_BASE_URL="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+export OPENAI_MODEL="qwen3-coder-plus"
+qwen
+```
+
+安装并使用。
+
+同时，Qwen 3也支持直接通过Claude Code调用，将环境变量替换为下列链接即可。
+
+```bash
+export ANTHROPIC_BASE_URL=https://dashscope-intl.aliyuncs.com/api/v2/apps/claude-code-proxy
+export ANTHROPIC_AUTH_TOKEN=your-dashscope-apikey
+```
 
 ## Trae
 
