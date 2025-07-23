@@ -210,7 +210,7 @@ claude
 
 <img src="./assets/image-20250711232257231.png" alt="image-20250711232257231" style="zoom:50%;" />
 
-##### API易
+##### 稳妥AI
 
 https://api.wentuo.ai/ ，存在一定逆向与模型降级行为。
 ```bash
