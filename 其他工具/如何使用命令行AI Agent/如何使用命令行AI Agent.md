@@ -237,6 +237,36 @@ export ANTHROPIC_BASE_URL="https://api.wentuo.ai"
 >
 > 月之暗面针对账户充值金额有速率限制，请查询相关文档与网络使用心得。
 
+##### Qwen Coder
+
+2025.7.23，阿里云百炼发布了Qwen 3 Coder模型与Qwen Code CLI工具，其称性能与Claude 4 Sonnet媲美，可以通过
+
+``` bash
+npm i -g @qwen-code/qwen-code
+export OPENAI_API_KEY="your_api_key_here"
+export OPENAI_BASE_URL="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+export OPENAI_MODEL="qwen3-coder-plus"
+qwen
+```
+
+安装并使用。
+
+同时，Qwen 3也支持直接通过Claude Code调用，将环境变量替换为下列链接即可。
+
+```bash
+export ANTHROPIC_BASE_URL=https://dashscope-intl.aliyuncs.com/api/v2/apps/claude-code-proxy
+export ANTHROPIC_AUTH_TOKEN=your-dashscope-apikey
+```
+
+##### 智谱GLM
+
+智谱清言在2025.7.28发布了GLM-4.5系列模型，可以直接接入Claude Code与Gemini CLI等命令行工具，具体可以在文档中查看。
+
+```bash
+ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+ANTHROPIC_AUTH_TOKEN={YOUR_API_KEY} 
+```
+
 ##### Openrouter
 
 现在还没有开通Claude Code支持。
@@ -258,33 +288,6 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
 
 其他的IDE包括：Cursor，Trae IDE，腾讯CodeBuddy IDE等。
-
-## Qwen Code&Qwen Coder
-
-2025.7.23，阿里云百炼发布了Qwen 3 Coder模型与Qwen Code CLI工具，其称性能与Claude 4 Sonnet媲美，可以通过
-
-``` bash
-npm i -g @qwen-code/qwen-code
-export OPENAI_API_KEY="your_api_key_here"
-export OPENAI_BASE_URL="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
-export OPENAI_MODEL="qwen3-coder-plus"
-qwen
-```
-
-安装并使用。
-
-同时，Qwen 3也支持直接通过Claude Code调用，将环境变量替换为下列链接即可。
-
-```bash
-export ANTHROPIC_BASE_URL=https://dashscope-intl.aliyuncs.com/api/v2/apps/claude-code-proxy
-export ANTHROPIC_AUTH_TOKEN=your-dashscope-apikey
-```
-
-## Trae
-
-字节跳动推出的Trae是一款类似于Cursor的集成IDE，并且也开发了类似于CLI Agent的SOLO模式，也有其在开发命令行项目的消息传出，建议使用国际版。
-
-
 
 
 
