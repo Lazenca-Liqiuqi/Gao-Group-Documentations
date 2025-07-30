@@ -13,7 +13,7 @@ Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI Agent工具，
 2025.7.21：Trae。
 2025.7.23：Qwen3-Coder与Qwen Code发布。
 
-我接下来提供Win下的使用方法，实测有效。
+我接下来提供Win下的使用方法，本人对Claude Code的用法进行了更详细的介绍。
 
 ## 科学上网
 
@@ -175,7 +175,7 @@ claude --version
 
 <img src="./assets/image-20250711230949432.png" alt="image-20250711230949432" style="zoom: 50%;" />
 
-#### 国内中转站与其他模型
+#### API来源
 
 为了解决Anthropic对于中国包括港澳地区的IP动辄封号的行为，我们只能使用中转站（API聚合平台或镜像），使用了国内的中转站，不需要使用魔法，网络环境相对稳定一些。
 
@@ -280,8 +280,26 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 Claude Code+Kimi K2/GLM-4.5即可在国内流畅使用。
 
 - sub agents与command有助于进一步提升效率
+
 - 细致编写环境CLAUDE.md与项目CLAUDE.md
-- 显式要求think
+
+- 显式要求think、think hard、think harder、ultrathink开启思考模式
+
+- 配置MCP扩展Claude Code的能力
+    一些例子：
+
+    ```bash
+    # Basic syntax
+    claude mcp add --transport sse <name> <url>
+    # Example: Adding an SSE server
+    claude mcp add --transport sse sse-server https://example.com/sse-endpoint
+    # Example: Adding an SSE server with custom headers
+    claude mcp add --transport sse api-server https://api.example.com/mcp --header "X-API-Key: your-key"
+    ```
+
+    请查询Anthropic文档https://docs.anthropic.com/en/docs/claude-code/mcp
+
+- 
 
 ## Github Copilot（等提供Agent的IDE/Editor）
 
