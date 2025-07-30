@@ -179,15 +179,7 @@ claude --version
 
 为了解决Anthropic对于中国包括港澳地区的IP动辄封号的行为，我们只能使用中转站（API聚合平台或镜像），使用了国内的中转站，不需要使用魔法，网络环境相对稳定一些。
 
-##### Anyrouter
-
-> [!WARNING]
->
-> 这个免费网站非常慢，并且很有可能是骗子，搞一些赠送福利后大批量封号的把戏，但是命令行工具的Tokens消耗是非常大的，非要白嫖也不是不行。
-
-https://anyrouter.top/register?aff=fjIS
-
-复制API，然后配置环境变量，修改Claude Code的API地址为中转站，将每一行的“sk-…”替换为API令牌。
+复制API，然后配置环境变量，修改Claude Code的API地址为其他网站，将每一行的“sk-…”替换为API令牌。也可以直接修改.bashrc文件。
 
 > [!NOTE]
 >
@@ -195,11 +187,11 @@ https://anyrouter.top/register?aff=fjIS
 
 ```bash
 echo -e '\n export ANTHROPIC_AUTH_TOKEN=sk-...' >> ~/.bash_profile
-echo -e '\n export ANTHROPIC_BASE_URL=https://anyrouter.top' >> ~/.bash_profile
+echo -e '\n export ANTHROPIC_BASE_URL=...' >> ~/.bash_profile
 echo -e '\n export ANTHROPIC_AUTH_TOKEN=sk-...' >> ~/.bashrc
-echo -e '\n export ANTHROPIC_BASE_URL=https://anyrouter.top' >> ~/.bashrc
+echo -e '\n export ANTHROPIC_BASE_URL=...' >> ~/.bashrc
 echo -e '\n export ANTHROPIC_AUTH_TOKEN=sk-...' >> ~/.zshrc
-echo -e '\n export ANTHROPIC_BASE_URL=https://anyrouter.top' >> ~/.zshrc
+echo -e '\n export ANTHROPIC_BASE_URL=...' >> ~/.zshrc
 ```
 
 运行 `source ~/.bashrc`让环境变量生效。然后启动。
@@ -237,7 +229,7 @@ export ANTHROPIC_BASE_URL="https://api.wentuo.ai"
 >
 > 月之暗面针对账户充值金额有速率限制，请查询相关文档与网络使用心得。
 
-##### Qwen Coder
+##### 阿里Qwen Coder
 
 2025.7.23，阿里云百炼发布了Qwen 3 Coder模型与Qwen Code CLI工具，其称性能与Claude 4 Sonnet媲美，可以通过
 
@@ -283,11 +275,17 @@ Anthropic也在Vscode提供了Claude Code插件，会在编辑器左上角快速
 
 并且，右键菜单也会出现Fix with Claude Code的选项。
 
+### Claude Code最佳实践
+
+Claude Code+Kimi K2/GLM-4.5即可在国内流畅使用。
+
+- sub agents与command有助于进一步提升效率
+- 细致编写环境CLAUDE.md与项目CLAUDE.md
+- 显式要求think
+
 ## Github Copilot（等提供Agent的IDE/Editor）
 
-Vscode内置的Github Copilot也具有相当强的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
+Vscode内置的Github Copilot也具有不错的Agent能力，并且售价相对便宜（Pro 10美元/M，Pro+39美元/M），更重要的是，**通过Github学生认证之后，即可免费使用Pro**。可以使用Gemini 2.5 Pro与Claude 4 Sonnet，额度尚可，并且提供无限的代码补全与GPT 4.1，GPT 4o聊天额度，关于如何方便地通过Github学生认证，请参阅《Github指北》篇。
 
 其他的IDE包括：Cursor，Trae IDE，腾讯CodeBuddy IDE等。
-
-
 
