@@ -286,19 +286,9 @@ Claude Code+Kimi K2/GLM-4.5即可在国内流畅使用。
 - 显式要求think、think hard、think harder、ultrathink开启思考模式
 
 - 配置MCP扩展Claude Code的能力
-    一些例子：
-
-    ```bash
-    # Basic syntax
-    claude mcp add --transport sse <name> <url>
-    # Example: Adding an SSE server
-    claude mcp add --transport sse sse-server https://example.com/sse-endpoint
-    # Example: Adding an SSE server with custom headers
-    claude mcp add --transport sse api-server https://api.example.com/mcp --header "X-API-Key: your-key"
-    ```
-
+    
     请查询Anthropic文档https://docs.anthropic.com/en/docs/claude-code/mcp
-
+    
 - 
 
 ## Github Copilot（等提供Agent的IDE/Editor）
