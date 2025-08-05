@@ -17,7 +17,7 @@ Gemini CLI和Claude Code是Google和Anthropic提供了命令行AI Agent工具，
 
 ## 科学上网
 
-在使用命令行工具的全程都需要使用魔法，除非使用国内中转站，我使用了Claude Code的中转站，但是Gemini CLI仍然需要全程使用魔法。
+在。
 
 首先需要一个靠谱的魔法软件，最好需要有以下功能：修改端口，TUN模式，系统代理，自定义代理规则。如果有其他的梯子的订阅没用完，至少得有全局代理和修改端口的功能，但不保证成功，这是因为，使用CLI工具需要让Terminal和WSL也能够通过代理。
 
@@ -286,7 +286,7 @@ Claude Code+Kimi K2/GLM-4.5即可在国内流畅使用。
 - 显式要求think、think hard、think harder、ultrathink开启思考模式
 
 - 配置MCP扩展Claude Code的能力
-    
+  
     请查询Anthropic文档https://docs.anthropic.com/en/docs/claude-code/mcp
     
 - 
